@@ -1,0 +1,88 @@
+.rightPanelContainer{
+    background-color: #ebe9f7;
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    width: 300px;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+
+.hr{
+    width: 100%;
+    color: var(--outline-dark-gray);
+}
+.contract{
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contractImage{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.contractDetails {
+    display: flex;
+    justify-content: space-between; /* This will maximize the space between columns */
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width of the container */
+  }
+  
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.contractName{
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--outline-dark-gray);
+
+}
+
+.contractLocation{
+    font-size: 12px;
+    color: var(--outline-dark-gray);
+
+}
+
+.contractCost{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--outline-dark-gray);
+
+}
+
+.container{
+    padding: 20px 10px;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--outline-dark-gray);
+    padding-bottom:10px ;
+
+}
+
+
+.linkTitle{
+    color: var(--outline-dark-gray);
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}

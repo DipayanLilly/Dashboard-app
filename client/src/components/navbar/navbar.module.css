@@ -1,0 +1,127 @@
+/* navbar.module.css */
+.navbarContainer {
+  background-color: white;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.navbarCollapsed {
+  width: calc(100% - 70px); 
+}
+
+.navbarExpanded {
+  width: calc(100% - 270px);
+}
+
+.toggleViewButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+  color: var(--outline-dark-gray);
+
+}
+.iconNormal {
+  transition: transform 1s ease;
+}
+.iconNormal:hover{
+  transform: scale(1.1);
+}
+.iconRotated {
+  transform: rotate(180deg);
+  transition: transform 1s ease;
+}
+
+.newContract {
+  display: flex;
+  align-items: center;
+  background-color: #b3a6fe;
+  color: white;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newContract:hover {
+  transform: scale(1.1);
+}
+
+.verticalLine {
+  height: 80px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.leftEdgeComponents, .rightEdgeComponents {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  
+}
+
+.icon {
+  color: var(--outline-dark-gray);
+  cursor: pointer;
+  transition: 0.5s ease;
+  
+}
+.icon:hover{
+  transform: scale(1.1);
+}
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: #a1a0b1;
+}
+
+.searchInput {
+  width: 200px;
+  padding: 10px 10px 10px 35px; /* Adjust padding to make space for the icon */
+  border: none;
+  border-radius: 15px;
+  background-color: #e3dfdf;
+}
+
+.addIcon {
+  background: #9c90e6;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+.logOut {
+  color: var(--outline-dark-gray);
+  border: 1px solid var(--outline-dark-gray);
+  padding: 5px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logOut:hover {
+  transform: scale(1.1);
+}

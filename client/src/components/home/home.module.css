@@ -1,0 +1,26 @@
+.home {
+    display: flex;
+  }
+  
+.collapsed {
+    width: calc(100% - 70px); 
+    margin-left: 70px;
+  }
+  
+.expanded {
+    width: calc(100% - 270px);
+    margin-left: 270px;
+  }
+  
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}  
+
+.rightDeck{
+    display: grid;
+    padding-top: 80px;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 20px;
+}

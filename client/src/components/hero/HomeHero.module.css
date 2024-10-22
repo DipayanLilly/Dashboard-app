@@ -1,0 +1,26 @@
+.heroContainer {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+  }
+  
+  .title > span {
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  
+  .chartsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  
