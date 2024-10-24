@@ -52,7 +52,6 @@ function Navbar() {
 
         <button
           onClick={() => {
-            console.log("pressed");
             logOutHandler();
             navigate("/login");
           }}

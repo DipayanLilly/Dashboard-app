@@ -11,6 +11,7 @@ import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import { SidebarContext } from "../context/drawerContext";
 import { useContext } from "react";
+import { LoginContext } from "../context/login_context";
 
 const SidebarData = [
   { icon: <EqualizerIcon />, text: "Dashboard" },
@@ -51,8 +52,9 @@ const renderMenuItems = (items) =>
     )
   );
 
-const Drawer = ({ userName }) => {
+const Drawer = () => {
   const { isCollapsed } = useContext(SidebarContext);
+  const { userName } = useContext(LoginContext);
 
   return (
     <div

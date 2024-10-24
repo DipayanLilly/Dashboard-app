@@ -8,13 +8,11 @@ app.use(cors());
 const USER_DATA = [];
 
 app.post("/register", (req, res) => {
-  console.log(req.body);
   USER_DATA.push(req.body);
   res.json(USER_DATA);
 });
 
 app.post("/login", (req, res) => {
-  console.log(req.body);
   const { userName, password } = req.body;
   const user = USER_DATA.find((user) => user.userName === userName);
   if (user) {

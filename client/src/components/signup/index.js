@@ -10,14 +10,12 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userName, password);
     axios
       .post("http://localhost:3001/register", {
         userName,
         password,
       })
       .then((result) => {
-        console.log(result);
         navigate("/login");
       })
       .catch((err) => console.log(err));

@@ -11,10 +11,9 @@ function Login() {
   const { isLoggedin, logInHandler } = useContext(LoginContext);
 
   const handleLogin = (e) => {
-    console.log("pressed");
     e.preventDefault();
     if (isLoggedin) {
-      navigate("/home");
+      navigate("/");
     }
     axios
       .post("http://localhost:3001/login", {
@@ -22,10 +21,9 @@ function Login() {
         password,
       })
       .then((result) => {
-        console.log(result);
         if (result.data === "Success") {
-          logInHandler();
-          navigate("/home");
+          logInHandler(userName);
+          navigate("/");
         } else {
           alert("User does not exist");
         }
