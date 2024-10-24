@@ -9,32 +9,23 @@ import Home from "./components/home/Home";
 import Login from "./components/login/login";
 import { SidebarProvider } from "./components/context/drawerContext";
 import "./index.css";
-
-const isLoggedin = () => {
-  return localStorage.getItem("userName") !== null;
-};
-
-const PrivateRoute = ({ children }) => {
-  return isLoggedin() ? children : <Navigate to="/" />;
-};
+import Register from "./components/signup";
+import LoginContextProvider from "./components/context/login_context";
 
 function App() {
   return (
-    <SidebarProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route
-            path="/home"
-            element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </Router>
-    </SidebarProvider>
+    <LoginContextProvider>
+      <SidebarProvider>
+        <Router>
+          <Routes>
+            <Route></Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </Router>
+      </SidebarProvider>
+    </LoginContextProvider>
   );
 }
 

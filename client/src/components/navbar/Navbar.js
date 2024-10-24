@@ -9,15 +9,13 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/login_context";
 
 function Navbar() {
   const { isCollapsed, toggleSidebar } = useContext(SidebarContext);
-  const navigate = useNavigate();
+  const { isLoggedin, logInHandler, logOutHandler } = useContext(LoginContext);
 
-  const handleLogout = () => {
-    localStorage.removeItem("userName");
-    navigate("/");
-  };
+  const navigate = useNavigate();
 
   return (
     <div
@@ -52,7 +50,14 @@ function Navbar() {
           <AppsOutlinedIcon className={styles.icon} />
         </div>
 
-        <button onClick={handleLogout} className={styles.logOut}>
+        <button
+          onClick={() => {
+            console.log("pressed");
+            logOutHandler();
+            navigate("/login");
+          }}
+          className={styles.logOut}
+        >
           Logout
         </button>
       </div>

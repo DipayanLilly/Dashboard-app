@@ -1,42 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import styles from "./index.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../signup/index.module.css";
 import axios from "axios";
-import { LoginContext } from "../context/login_context";
 
-function Login() {
+function Register() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { isLoggedin, logInHandler } = useContext(LoginContext);
 
-  const handleLogin = (e) => {
-    console.log("pressed");
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (isLoggedin) {
-      navigate("/home");
-    }
+    console.log(userName, password);
     axios
-      .post("http://localhost:3001/login", {
+      .post("http://localhost:3001/register", {
         userName,
         password,
       })
       .then((result) => {
         console.log(result);
-        if (result.data === "Success") {
-          logInHandler();
-          navigate("/home");
-        } else {
-          alert("User does not exist");
-        }
+        navigate("/login");
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className={styles.sign_up_container}>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Name"
@@ -49,12 +39,12 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
-      <p>New User?</p>
-      <Link to="/register">Register here</Link>
+      <p>Already have an account?</p>
+      <Link to="/login">Login</Link>
     </div>
   );
 }
 
-export default Login;
+export default Register;
